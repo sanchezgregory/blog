@@ -16,6 +16,4 @@ class NotesTableSeeder extends Seeder
         factory(Category::class, 5)->create();
         factory(Note::class, 100)->create(); // lo podemos hacer directamente en la consola sin necesidad del archivo seeder
     }
-
-
 }

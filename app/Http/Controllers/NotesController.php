@@ -20,7 +20,6 @@ class NotesController extends Controller
         if (isset($request->search) && empty($request->search) ) {
             return redirect()->to('/notes');
         }
-
 		return view('notes.index',compact('notes'));
 	}
 

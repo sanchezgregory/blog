@@ -34,8 +34,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::get('/notes/{id}/edit', 'NotesController@edit')->name('editNote');
 	Route::put('/notes/{id}/edit', 'NotesController@update')->name('updateNote');
 
-
-
     Route::get('/categories', 'CategoriesController@index')->name('indexCategory');
     Route::post('/categories/store', 'CategoriesController@store')->name('storeCategory');
     Route::delete('/categories/{id}', 'CategoriesController@destroy')->name('destroyCategory');
@@ -43,10 +41,13 @@ Route::group(['middleware' => 'auth'], function() {
     Route::put('/categories/{id}', 'CategoriesController@update')->name('updateCategory');
     Route::get('/categories/{id}', 'CategoriesController@view')->name('viewCategory');
 
-    Route::get('profile', 'UsersController@profile')->name('users.profile');
+    Route::get('/users/profile', 'UsersController@profile')->name('users.profile');
+    Route::get('/users', 'UsersController@index')->name('users.index');
     Route::put('profile/comments/{id}/restore', 'CommentsController@restore')->name('comments.restore');
 
     Route::resource('comments','CommentsController');
+
+    Route::get('/deleteimg', 'UsersController@deleteImg')->name('deleteimg');
 	
 });
 

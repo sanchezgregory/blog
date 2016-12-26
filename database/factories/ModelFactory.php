@@ -30,8 +30,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Note::class, function (Faker\Generator $faker) {
-	
-
 	return [
         'content' => $faker->text(190),
         'title' => $faker->text(48),

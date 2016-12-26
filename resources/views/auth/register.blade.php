@@ -2,7 +2,7 @@
 @section('title', 'Formulario de registro')
 @section('content')
 
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -33,6 +33,7 @@
                             </div>
                         </div>
 
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
@@ -56,8 +57,22 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="avatar" class="col-md-4 control-label">Seleccione archivo</label>
+
+                            <div class="col-md-6">
+                                <input id="avatar" type="file" name="avatar" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-block">
                                     Register
                                 </button>
                             </div>

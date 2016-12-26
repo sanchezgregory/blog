@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => 'public',
 
     /*
     |--------------------------------------------------------------------------
@@ -60,6 +60,11 @@ return [
             'secret' => 'your-secret',
             'region' => 'your-region',
             'bucket' => 'your-bucket',
+        ],
+        'avatars' => [  // ----> agregamos el nuevo disco para nuestro avatar
+            'driver' => 'local',
+            'root' => storage_path('app/public/avatars'),
+            'visibility' => 'public',
         ],
 
     ],

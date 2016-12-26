@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{{  asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
 
 
@@ -61,6 +61,12 @@
                                         <li><a href="{{ route('createCategory')}}">Crear</a></li>
                                     @endif
                                         <li><a href="{{ route('indexCategory') }}">Listado</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuarios <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ route('users.index') }}">Listado</a></li>
                                 </ul>
                             </li>
                         @endif
